@@ -9,18 +9,24 @@
 после уже zz.
 '''
 
-def delete_task2(str):
-    count = 0
-    buf = str
+def delete_task2(buf):
+    flag = True
 
-    while count != 0:
-        stack = []
-        count = 0
+    while flag:
+        # print((buf))
+        flag = False
 
-        for i in range(len(buf)):
-            pass
+        for i in range(len(buf) - 1):
+            if buf[i] == buf[i + 1]:
+                flag = True
 
-    return stack
+                buf = buf[:i] + buf[i+2:]
+
+                break
+
+    return buf
 
 s = input()
+# s = 'cdffd'
 
+print(delete_task2(s))
